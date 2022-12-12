@@ -24,7 +24,7 @@ header{
     "text-group featured-img"
     ;
     grid-template-rows: 1fr 2fr;
-    /* grid-template-columns: repeat(auto-fit, minmax(412px, 1fr)); */
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     align-content: center;
     background-color: var(--purple-bg);
@@ -82,11 +82,13 @@ span{
     grid-area: featured-img;
     box-sizing: border-box;
     width: 100%;
-    max-width: 408px;
+    /* max-width: fit-content; */
 }
 
 #id-featured-img img{
-    max-width: 100%;
+    max-width: fit-content;
+    width: 100%;
+
 }
 
 ul{
@@ -110,7 +112,7 @@ main{
     "post2 post3 post4"
     ;
     grid-template-rows: 1fr 1fr;
-    /* grid-template-columns: repeat(auto-fill, minmax(412px, 1fr)); */
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: 1rem;
     row-gap: 1rem;
     background-color: var(--light-purple);
@@ -135,13 +137,7 @@ figure{
     max-width: fit-content;
 }
 
-
-#id-post1 img{
-    width: 100%;
-    max-width: fit-content;
-}
-
-#id-post2 img, #id-post3 img, #id-post4 img{
+#id-post1 img, #id-post2 img, #id-post3 img, #id-post4 img{
     width: 100%;
 }
 
@@ -151,7 +147,7 @@ figure{
     flex-direction: column;
     /* border: 1px solid red; */
     width: auto;
-    max-width: 412px;
+    max-width: fit-content;
     gap: 1rem;
 }
 
@@ -180,7 +176,7 @@ h3, h4{
     
 }
 
-@media (min-width: 412px) { /*quando a largura da tela é 412px ou mais*/
+@media (min-width: 425px) { /*quando a largura da tela é 412px ou mais*/
     header, main{
         padding: 20px 200px;
     }
@@ -192,10 +188,22 @@ h3, h4{
     }
 }
 
-@media (max-width: 412px) { /*quando a largura da tela é 412px ou menos*/
+@media (max-width: 425px) { /*quando a largura da tela é 412px ou menos*/
     header, main{
         padding: 0px 5px;
         row-gap: 2rem;
+    }
+
+    nav{
+        max-width: 320px;
+        flex-wrap: wrap ;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    h2,h3, p{
+        width: 100%;
+        max-width: 320px;
     }
 
     header{
@@ -206,7 +214,7 @@ h3, h4{
         "featured-img"
         ;
         grid-template-rows: 1fr;
-        grid-template-columns: repeat(auto-fill, minmax(412px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(425px, 1fr));
     }
 
     main{
@@ -219,7 +227,7 @@ h3, h4{
         "post4"
         ;
         grid-template-rows: 1fr;
-        grid-template-columns: repeat(auto-fill, minmax(412px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(425px, 1fr));
     }
 
 }
